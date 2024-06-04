@@ -21,7 +21,7 @@ namespace Vjezba
         }
 
   
-        public void IspisiPodatke()
+        public virtual void IspisiPodatke()
         {
             Console.WriteLine($"Ime: {Ime}");
             Console.WriteLine($"Prezime: {Prezime}");

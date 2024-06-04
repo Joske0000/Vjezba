@@ -11,7 +11,7 @@ namespace Vjezba
     {
         static void Main(string[] args)
         {
-            // Unos podataka od korisnika
+          
             Console.WriteLine("Unesite ime: ");
             string ime = Console.ReadLine();
 
@@ -24,14 +24,14 @@ namespace Vjezba
             Console.WriteLine("Unesite ulogu: ");
             string uloga = Console.ReadLine();
 
-            Console.WriteLine("Unesite datum zaposlenja (YYYY-MM-DD): ");
-            DateTime datumZaposlenja = DateTime.ParseExact(Console.ReadLine(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
-
-            // Kreiranje objekta klase Zaposlenik
+            Console.WriteLine("Unesite datum zaposlenja (YYYY-DD-MM): ");
+            DateTime datumZaposlenja = DateTime.ParseExact(Console.ReadLine(), "yyyy-dd-MM", CultureInfo.InvariantCulture);
+           
             Zaposlenik zaposlenik = new Zaposlenik(ime, prezime, oib, uloga, datumZaposlenja);
 
-            // Ispis podataka na konzolu
             zaposlenik.IspisiPodatke();
+
+            Console.ReadKey();
         }
     }
 }

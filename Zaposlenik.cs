@@ -11,8 +11,7 @@ namespace Vjezba
         public string Uloga { get; set; }
         public DateTime DatumZaposlenja { get; set; }
 
-        public Zaposlenik(string ime, string prezime, string oib, string uloga, DateTime datumZaposlenja)
-            : base(ime, prezime, oib)
+        public Zaposlenik(string ime, string prezime, string oib, string uloga, DateTime datumZaposlenja) : base(ime, prezime, oib)
         {
             Uloga = uloga;
             DatumZaposlenja = datumZaposlenja;
