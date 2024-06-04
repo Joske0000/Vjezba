@@ -24,8 +24,8 @@ namespace Vjezba
             Console.WriteLine("Unesite ulogu: ");
             string uloga = Console.ReadLine();
 
-            Console.WriteLine("Unesite datum zaposlenja (YYYY-DD-MM): ");
-            DateTime datumZaposlenja = DateTime.ParseExact(Console.ReadLine(), "yyyy-dd-MM", CultureInfo.InvariantCulture);
+            Console.WriteLine("Unesite datum zaposlenja dan-mjesec-godina: ");
+            DateTime datumZaposlenja = DateTime.ParseExact(Console.ReadLine(), "dd-MM-yyyy", CultureInfo.CurrentCulture);
            
             Zaposlenik zaposlenik = new Zaposlenik(ime, prezime, oib, uloga, datumZaposlenja);
 

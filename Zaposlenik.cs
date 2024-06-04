@@ -20,7 +20,10 @@ namespace Vjezba
         public override int IzracunajRadniStaz()
         {
             TimeSpan radniStaz = DateTime.Now - DatumZaposlenja;
-            return (int)radniStaz.TotalDays;
+            double totalDays = radniStaz.TotalDays;
+            int years = (int)Math.Floor(totalDays / 365.2425); 
+
+            return years;
         }
 
         public override void IspisiPodatke()
@@ -28,7 +31,7 @@ namespace Vjezba
             base.IspisiPodatke(); 
             Console.WriteLine($"Uloga: {Uloga}");
             Console.WriteLine($"Datum zaposlenja: {DatumZaposlenja.ToShortDateString()}");
-            Console.WriteLine($"Radni staž: {IzracunajRadniStaz()} dana");
+            Console.WriteLine($"Radni staž: {IzracunajRadniStaz()} godina");
         }
     }
 
