@@ -20,12 +20,21 @@ namespace Vjezba
 
             Console.WriteLine("Unesite OIB: ");
             string oib = Console.ReadLine();
+            while (oib.Length != 11 || !oib.All(char.IsDigit))
+                    {   
+                    Console.WriteLine("Invalid OIB. OIB should be 11 digits. Please enter again:");
+                    oib = Console.ReadLine();
+                    }
 
             Console.WriteLine("Unesite ulogu: ");
             string uloga = Console.ReadLine();
 
             Console.WriteLine("Unesite datum zaposlenja dan-mjesec-godina: ");
-            DateTime datumZaposlenja = DateTime.ParseExact(Console.ReadLine(), "dd-MM-yyyy", CultureInfo.CurrentCulture);
+            DateTime datumZaposlenja;
+            while (!DateTime.TryParseExact(Console.ReadLine(), "dd-MM-yyyy", CultureInfo.CurrentCulture, DateTimeStyles.None, out datumZaposlenja))
+            {
+                Console.WriteLine("Invalid date format. Please enter again (dd-MM-yyyy):");
+            }
            
             Zaposlenik zaposlenik = new Zaposlenik(ime, prezime, oib, uloga, datumZaposlenja);
 
